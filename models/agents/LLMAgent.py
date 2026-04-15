@@ -117,7 +117,7 @@ class LLMAgent:
             parser = StrOutputParser()
 
         # 4. Create chain
-        if self.has_chat_history:  # TODO: 当前不可用！！！待修改
+        if self.has_chat_history:
             print('[warning] has_chat_history=True method is outdated!')
 
             def get_session_history(session_id):
