@@ -4,7 +4,8 @@
 import os
 import sys
 
-sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))))
+sys.path.append(
+    os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))))
 from config import OLLAMA_MODEL_LIST
 from models.agents.LLMAgent import LLMAgent
 
@@ -159,4 +160,3 @@ class AgentDesignAgent(LLMAgent):
             print(e)
 
         return res
-

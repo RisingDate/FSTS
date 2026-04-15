@@ -2,12 +2,14 @@ import logging
 import os
 from typing import Literal
 
+
 # 定义日志模块
 class TagFormatter(logging.Formatter):
     def format(self, record):
         if not hasattr(record, 'tag'):
             record.tag = 'GENERAL'  # 设置默认tag
         return f"[{record.tag}] {super().format(record)}"
+
 
 logger = logging.getLogger("myLogger")
 logger.setLevel(logging.INFO)
@@ -26,6 +28,7 @@ console_handler = logging.StreamHandler()
 console_handler.setFormatter(formatter)
 logger.addHandler(console_handler)
 logger.addHandler(file_handler)
+
 
 # 日志保存简易函数
 def log_with_tag(message, tag='GENERAL', level: Literal['debug', 'info', 'warning', 'error', 'critical'] = 'info'):

@@ -13,8 +13,10 @@ from langchain_openai import ChatOpenAI
 
 import sys
 import os
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 from config import OLLAMA_MODEL_LIST
+
 
 class LLMAgent:
     # 基础大模型Agent，继承自AgentBase

@@ -1,5 +1,6 @@
-import time
 import random
+import time
+
 
 # API重试机制
 def retry_api_call(func, max_retries=10, delay=2, *args, **kwargs):
@@ -27,6 +28,7 @@ def retry_api_call(func, max_retries=10, delay=2, *args, **kwargs):
                 raise e
 
     raise Exception("API调用失败，已达到最大重试次数")
+
 
 # 安全的Agent调用包装器
 def safe_agent_call(agent, method_name, *args, **kwargs):

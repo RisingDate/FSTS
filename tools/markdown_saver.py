@@ -1,7 +1,9 @@
-import os
 import json
+import os
 from datetime import datetime
+
 from tools.logger import log_with_tag
+
 
 # 保存剧本到markdown文件
 def save_scripts_to_markdown(scripts, script_ratings, start_time, end_time, req):
@@ -106,9 +108,9 @@ def save_scripts_to_markdown(scripts, script_ratings, start_time, end_time, req)
 
         markdown_content += f"## 实验总结\n\n- **最佳剧本**: 剧本 {best_script_idx + 1}\n"
         avg_score = sum(rating.get('scientific', 0) * 0.15 + rating.get('difficulty', 0) * 0.05 +
-                     rating.get('quality', 0) * 0.1 + rating.get('risk', 0) * 0.05 +
-                     rating.get('fitness', 0) * 0.15 + rating.get('ethics', 0) * 0.5
-                     for rating in script_ratings) / len(script_ratings)
+                        rating.get('quality', 0) * 0.1 + rating.get('risk', 0) * 0.05 +
+                        rating.get('fitness', 0) * 0.15 + rating.get('ethics', 0) * 0.5
+                        for rating in script_ratings) / len(script_ratings)
         markdown_content += f"- **平均评分**: {avg_score:.2f}/100\n\n"
 
     markdown_content += f"## 生成时间\n- **文件生成时间**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n"
